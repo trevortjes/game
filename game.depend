@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1558709789 source:d:\documenten\github\kloten-met-c\game\main.c
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+
+1558709828 d:\documenten\github\kloten-met-c\game\actions.h
+
+1558709818 source:d:\documenten\github\kloten-met-c\game\actions.c
+	"actions.h"
+	"main.h"
+	"various.h"
+
+1558709775 d:\documenten\github\kloten-met-c\game\main.h
+	"actions.h"
+
+1558709808 d:\documenten\github\kloten-met-c\game\various.h
+
+1558709847 source:d:\documenten\github\kloten-met-c\game\various.c
+	"various.h"
+	"main.h"
+	<time.h>
+
+1558709818 source:d:\documenten\github\game\actions.c
+	"actions.h"
+	"main.h"
+	"various.h"
+
+1558709828 d:\documenten\github\game\actions.h
+
+1558709775 d:\documenten\github\game\main.h
+	"actions.h"
+
+1558709808 d:\documenten\github\game\various.h
+
+1558709847 source:d:\documenten\github\game\various.c
+	"various.h"
+	"main.h"
+	<time.h>
+
