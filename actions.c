@@ -1,6 +1,9 @@
 #include "actions.h"
 #include "main.h"
 #include "various.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void looting()
 {
@@ -87,7 +90,6 @@ void getItem()
         {
             full=1;
         }
-
     }
 
     if(full==0)
@@ -97,7 +99,6 @@ void getItem()
             if (strcmp(inventory[i], "---") == 0)
             {
                 strcpy(inventory[i],items[r]);
-
                 break;
             }
         }
@@ -116,10 +117,29 @@ void removeItem()
     int n;
     printf("insert number: ");
     scanf("%d",&n);
-    printf("You threw the %s away\n\n",inventory[n-1]);
-    strcpy(inventory[n-1],"---");
+
+
+    if(strcmp(inventory[n-1], "---") != 0)
+    {
+        printf("You threw the %s away\n\n",inventory[n-1]);
+        strcpy(inventory[n-1],"---");
+    }
+    else
+    {
+        scr("There is nothing to throw away",0);
+    }
 
 }
 
+void gunCheck()
+{
+    if (strcmp(gun,"---")==0){
+        scr("Youre wielding nothing",0);
+    }else{
+printf("You are currently wielding a %s\n", gun);}
+}
 
-
+void me()
+{
+    printf("NAME: %s\nXP: %d\n",name,xp);
+}

@@ -1,4 +1,5 @@
 #include "various.h"
+#include "actions.h"
 #include "main.h"
 #include <time.h>
 
@@ -20,7 +21,7 @@ void scr(char* s, char* v)
     while(*s != '\0')
     {
         printf("%c",*s);
-        delay(50);
+        delay(30);
         s++;
     }
 
@@ -30,7 +31,7 @@ void scr(char* s, char* v)
         while(*v != '\0')
         {
             printf("%c",*v);
-            delay(40);
+            delay(30);
             v++;
         }
     }
@@ -60,7 +61,7 @@ void introduction()
 
 void parser()
 {
-    printf("I want to: ");
+    printf("Command: ",0);
     char com[]= {};
     scanf("%s",&com);
 
@@ -69,7 +70,7 @@ void parser()
     sanity--;
     energy--;
 
-    if (strcmp(com, "loot") == 0)
+    if (strcmp(com, "loot") == 0 || strcmp(com, "l") == 0 )
     {
         looting();
     }
@@ -77,7 +78,7 @@ void parser()
     {
         death();
     }
-    else if (strcmp(com, "parameters") == 0)
+    else if (strcmp(com, "parameters") == 0 || strcmp(com, "p") == 0)
     {
         params();
     }
@@ -85,13 +86,21 @@ void parser()
     {
         sleep();
     }
-    else if (strcmp(com, "remove") == 0)
+    else if (strcmp(com, "remove") == 0 || strcmp(com, "rm") == 0 )
     {
         removeItem();
     }
-     else if (strcmp(com, "inventory") == 0)
+    else if (strcmp(com, "inventory") == 0 || strcmp(com, "inv") == 0)
     {
         inv();
+    }
+    else if (strcmp(com, "gun") == 0 || strcmp(com, "weapon")==0)
+    {
+        gunCheck();
+    }
+    else if (strcmp(com, "me") == 0)
+    {
+        me();
     }
     else
     {
