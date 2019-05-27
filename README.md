@@ -1,6 +1,6 @@
 # game
 Available commands:
-loot OR l  = look for loot (50% chance of failing)
+loot OR l  = look for loot (50% chance of failing)<br>
 die = commit suicide
 parameters OR p = check health, hunger, thirst, fatigue and sanity
 sleep = rest for a while
