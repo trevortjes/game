@@ -6,4 +6,5 @@ void parser();
 void introduction();
 
 extern int health, hunger, thirst, sanity, energy;
-extern char name[];
+extern char name[20];
+extern char inventory[5][10];

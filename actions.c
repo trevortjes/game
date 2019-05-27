@@ -5,15 +5,16 @@
 void looting()
 {
     int r = rand() % 99;
+
     if(r>50)
     {
-        scr("you found an item!",0);
+        getItem();
     }
     else
     {
         scr("you found nothing...",0);
     }
-    energy-=10;
+    //energy-=10;
 }
 
 void params()
@@ -23,7 +24,14 @@ void params()
 
 void death()
 {
-    printf("You committed suicide");
+    scr("...",0);
+    delay(1000);
+    printf("You committed suicide\n");
+    delay(1000);
+    printf("Final parameters:\n");
+    delay(1000);
+    params();//Shows your final parameters
+    delay(1000);
     exit(0);
 }
 
@@ -47,7 +55,70 @@ void sleep()
         sanity=100;
     }
 
-    hunger-=20;
-    thirst-=15;
+    //hunger-=20;
+    //thirst-=15;
     scr("You slept well",0);
 }
+
+void invent()
+{
+    printf("\n #\tItem\n");
+    for(int i=0; i<5; i++)
+    {
+        printf("(%d)\t%s\n",i+1,inventory[i]);
+    }
+    printf("\n");
+}
+
+void getItem()
+{
+    char items[3][10]= {"bread","bullet","water"};
+    char r = rand() % 3;
+    int full = 0;
+
+    for(int j=0; j<5; j++)
+    {
+        if(strcmp(inventory[j], "---") == 0)
+        {
+            full =0;
+            break;
+        }
+        else
+        {
+            full=1;
+        }
+
+    }
+
+
+    if(full==0)
+    {
+        for(int i = 0; i<5; i++)
+        {
+            if (strcmp(inventory[i], "---") == 0)
+            {
+                strcpy(inventory[i],items[r]);
+
+                break;
+            }
+        }
+        scr("you found", items[r]);
+    }
+    else
+    {
+        scr("Your inventory is full",0);
+    }
+
+
+}
+
+void removeItem()
+{
+    int n;
+    printf("insert number: ");
+    scanf("%d",&n);
+    printf("You threw the %s away\n\n",inventory[n-1]);
+    strcpy(inventory[n-1],"---");
+
+}
+

@@ -85,6 +85,14 @@ void parser()
     {
         sleep();
     }
+    else if (strcmp(com, "inventory") == 0)
+    {
+        invent();
+    }
+    else if (strcmp(com, "remove") == 0)
+    {
+        removeItem();
+    }
     else
     {
         printf("invalid input\n");

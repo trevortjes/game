@@ -21,20 +21,27 @@
 	"main.h"
 	<time.h>
 
-1558709818 source:d:\documenten\github\game\actions.c
+1558967614 source:d:\documenten\github\game\actions.c
 	"actions.h"
 	"main.h"
 	"various.h"
 
 1558709828 d:\documenten\github\game\actions.h
 
-1558709775 d:\documenten\github\game\main.h
+1558964599 d:\documenten\github\game\main.h
 	"actions.h"
 
 1558709808 d:\documenten\github\game\various.h
 
-1558709847 source:d:\documenten\github\game\various.c
+1558965840 source:d:\documenten\github\game\various.c
 	"various.h"
 	"main.h"
 	<time.h>
+
+1558966141 source:d:\documenten\github\game\main.c
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+
+1558959319 source:d:\documenten\github\game\icon.rc
 
