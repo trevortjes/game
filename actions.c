@@ -19,7 +19,7 @@ void looting()
 
 void params()
 {
-    printf("\n(Health: %d | Hunger: %d | Thirst: %d | Sanity: %d | Energy: %d)\n\n",health,hunger,thirst,sanity, energy);
+    printf("\n(Health: %d | Hunger: %d | Thirst: %d | Sanity: %d | Energy: %d)\n\n", health, hunger, thirst, sanity, energy);
 }
 
 void death()
@@ -60,7 +60,7 @@ void sleep()
     scr("You slept well",0);
 }
 
-void invent()
+void inv()
 {
     printf("\n #\tItem\n");
     for(int i=0; i<5; i++)
@@ -89,7 +89,6 @@ void getItem()
         }
 
     }
-
 
     if(full==0)
     {
@@ -121,4 +120,6 @@ void removeItem()
     strcpy(inventory[n-1],"---");
 
 }
+
+
 

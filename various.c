@@ -77,7 +77,7 @@ void parser()
     {
         death();
     }
-    else if (strcmp(com, "check") == 0)
+    else if (strcmp(com, "parameters") == 0)
     {
         params();
     }
@@ -85,16 +85,17 @@ void parser()
     {
         sleep();
     }
-    else if (strcmp(com, "inventory") == 0)
-    {
-        invent();
-    }
     else if (strcmp(com, "remove") == 0)
     {
         removeItem();
     }
+     else if (strcmp(com, "inventory") == 0)
+    {
+        inv();
+    }
     else
     {
-        printf("invalid input\n");
+        printf("You seem to not know what to do\n");
     }
 }
+
