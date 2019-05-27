@@ -25,11 +25,11 @@ void death()
     //Sequence for committing suicide
     scr("...",0);
     delay(1000);
-    printf("You committed suicide\n");
+    printf("\nYou committed suicide\n");
     delay(1000);
-    printf("Final parameters:\n");
+    printf("Dogtag:\n");
     delay(1000);
-    params();//Shows your final parameters
+    me();
     delay(1000);
     exit(0);
 }
@@ -101,7 +101,7 @@ void getItem()
                 break;//Get out of the function
             }
         }
-        scr("you found", items[r]);//Tell the user what was found
+        scr("you found:", items[r]);//Tell the user what was found
     }
     else
     {
@@ -113,29 +113,46 @@ void getItem()
 
 void removeItem()
 {
-    int n;
+    int n,valid;
     printf("insert number: ");//Ask for inventory slot to clear
     scanf("%d",&n);
 
 
-    if(strcmp(inventory[n-1], "---") != 0)//If the chosen slot is full
+    if(n>=1 && n<=5)
     {
-        printf("You threw the %s away\n\n",inventory[n-1]);//Remove it by setting it to ---
-        strcpy(inventory[n-1],"---");
+        valid = 1;
     }
-    else//If the spot is already empty
+
+    if (valid == 1)
     {
-        scr("There is nothing to throw away",0);//Tell the user it is empty
+        if(strcmp(inventory[n-1], "---") != 0)//If the chosen slot is full
+        {
+            printf("You threw the %s away\n\n",inventory[n-1]);//Remove it by setting it to ---
+            strcpy(inventory[n-1],"---");
+        }
+        else//If the spot is already empty
+        {
+            scr("There is nothing to throw away",0);//Tell the user it is empty
+        }
+
+    }
+    else
+    {
+        scr("Invalid slot",0);
     }
 
 }
 
 void gunCheck()
 {
-    if (strcmp(gun,"---")==0){//Check if the user does not have a gun
+    if (strcmp(gun,"---")==0) //Check if the user does not have a gun
+    {
         scr("Youre wielding nothing",0);//Tell the user there is no gun available
-    }else{//If there is a gun
-printf("You are currently wielding a %s\n", gun);}//Tell the user they have a gun and what it is
+    }
+    else  //If there is a gun
+    {
+        printf("You are currently wielding a %s\n", gun);
+    }//Tell the user they have a gun and what it is
 }
 
 void me()

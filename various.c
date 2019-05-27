@@ -44,22 +44,61 @@ void scr(char* s, char* v)
 void introduction()
 {
     //Introduction sequence
-    scr("Are you awake?",0);
-    scr("Good, you appeared to be dead",0);
-    scr("Let me help you get up...",0);
-    scr("What is your name?",0);
+    scr("- Are you awake?",0);
+    scr("- Good, you appeared to be dead",0);
+    scr("- Let me help you get up...",0);
+    scr("- What is your name?",0);
     printf("Name: ");
     scanf("%s",&name);
-    scr("So your name is",name);
-    scr("I used to know a",name);
-    scr("But let's not get sidetracked...",0);
-    scr("Do you remember the attack?",0);
-    scr("Those assholes bombed us",0);
-    scr("I lost all my men but found you",0);
-    scr("Take a look around, you might find something",0);
+    scr("- I have never seen you here before,",name);
+    scr("- Nevermind, no time for smalltalk",0);
+    scr("- Do you remember the attack?",0);
+    scr("- Those assholes bombed us!",0);
+    scr("- We are the only ones left...",0);
+    scr("- Take a look around, you might find something (loot)",0);
     delay(1000);
+
+    char com[]= {};
+    while(strcmp(com, "loot") != 0)
+    {
+        printf("Command: ",0);
+        char com[]= {};
+        scanf("%s",&com);//Asks for a command
+    }
+        scr("you found: Bread", 0);
+
+    delay(500);
+
+    scr("- Hm, moldy old bread",0);
+    scr("- Well, it's better than nothing",0);
+    scr("- Are you feeling hungry?",0);
+    delay(500);
     params();
+    delay(500);
+    scr("- You sure look hungry",0);
+    scr("- Go on, take a bite (eat)",0);
+
+    com[0]= "";
+    while(strcmp(com, "eat") != 0)
+    {
+        printf("Command: ",0);
+        char com[]= {};
+        scanf("%s",&com);//Asks for a command
+    }
+
+    hunger+=20;
+    delay(500);
+    params();
+    delay(500);
+
+    scr("- That will make you feel...", 0);
+    scr("...",0);
+   scr("A clean snipershot right through the skull killed the friendly soldier", 0);
+    scr("It is all up to you now\n", 0);
     delay(1000);
+
+    parser();
+
 }
 
 

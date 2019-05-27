@@ -1,14 +1,15 @@
 #include "includes.h"
 
-int health=100, hunger=100, thirst=100, sanity=100, energy=100, xp=0;
+int health=100, hunger=80, thirst=100, sanity=100, energy=100, xp=0;
 char name[20]= {"Ryan"};
 char inventory[5][10] = {"---","---","---","---","---"};
 char gun[10]="PPSH";
 
 int main()
 {
-    //getch();  //Waits for input
-    //introduction();//Starts the introduction sequence
+    printf("Press any key to start\n");
+    getch();  //Waits for input
+    introduction();//Starts the introduction sequence
 
     while(1)
     {
