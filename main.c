@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "main.h"
-#include "actions.h"
-#include "various.h"
+#include "includes.h"
 
 int health=100, hunger=100, thirst=100, sanity=100, energy=100, xp=0;
 char name[20]= {"Ryan"};
@@ -32,7 +28,6 @@ int main()
             delay(1000);
             exit(0);
         }
-
     }
     printf("THE END");
     return 0;

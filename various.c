@@ -1,31 +1,31 @@
-#include "various.h"
-#include "actions.h"
-#include "main.h"
-#include <time.h>
+#include "includes.h"
 
 void delay(int ms)
 {
     // Converting time into milli_seconds
     int milli_seconds = ms;
 
-    // Stroing start time
+    //Setting the start time
     clock_t start_time = clock();
 
-    // looping till required time is not acheived
+    // looping till required time is achieved
     while (clock() < start_time + milli_seconds)
         ;
 }
 
+/*
+@TODO maybe add a third parameter
+*/
 void scr(char* s, char* v)
 {
-    while(*s != '\0')
+    while(*s != '\0')//Checks if the end of a string is not reached yet
     {
-        printf("%c",*s);
+        printf("%c",*s);//Print all the characters in the string with delay
         delay(30);
         s++;
     }
 
-    if (v!=0)
+    if (v!=0)//Same but for the second segment
     {
         printf(" ");
         while(*v != '\0')
@@ -38,9 +38,12 @@ void scr(char* s, char* v)
     printf("\n");
     delay(500);
 }
-
+/*
+@TODO name check, make it secure but also more interesting
+*/
 void introduction()
 {
+    //Introduction sequence
     scr("Are you awake?",0);
     scr("Good, you appeared to be dead",0);
     scr("Let me help you get up...",0);
@@ -59,52 +62,48 @@ void introduction()
     delay(1000);
 }
 
+
 void parser()
 {
     printf("Command: ",0);
     char com[]= {};
-    scanf("%s",&com);
+    scanf("%s",&com);//Asks for a command
 
-    hunger--;
-    thirst--;
-    sanity--;
-    energy--;
-
-    if (strcmp(com, "loot") == 0 || strcmp(com, "l") == 0 )
+    if (strcmp(com, "loot") == 0 || strcmp(com, "l") == 0 )//Looting
     {
         looting();
     }
-    else if (strcmp(com, "die") == 0)
+    else if (strcmp(com, "die") == 0)//Suicide
     {
         death();
     }
-    else if (strcmp(com, "parameters") == 0 || strcmp(com, "p") == 0)
+    else if (strcmp(com, "parameters") == 0 || strcmp(com, "p") == 0)//Check params
     {
         params();
     }
-    else if (strcmp(com, "sleep") == 0)
+    else if (strcmp(com, "sleep") == 0)//Sleep
     {
         sleep();
     }
-    else if (strcmp(com, "remove") == 0 || strcmp(com, "rm") == 0 )
+    else if (strcmp(com, "remove") == 0 || strcmp(com, "rm") == 0 )//Remove an item from inventory
     {
         removeItem();
     }
-    else if (strcmp(com, "inventory") == 0 || strcmp(com, "inv") == 0)
+    else if (strcmp(com, "inventory") == 0 || strcmp(com, "inv") == 0)//Check inventory
     {
         inv();
     }
-    else if (strcmp(com, "gun") == 0 || strcmp(com, "weapon")==0)
+    else if (strcmp(com, "gun") == 0 || strcmp(com, "weapon")==0)//Check current weapon
     {
         gunCheck();
     }
-    else if (strcmp(com, "me") == 0)
+    else if (strcmp(com, "me") == 0)//Check general stuff
     {
         me();
     }
     else
     {
-        printf("You seem to not know what to do\n");
+        printf("You seem to not know what to do\n");//When an unknown command is used
     }
 }
 

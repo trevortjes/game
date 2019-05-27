@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c99" />
 					<Add option="-g" />
 					<Add directory="D:/Documenten/GitHub/Kloten-met-C/game/" />
 				</Compiler>
@@ -36,6 +37,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="actions.h" />
+		<Unit filename="icon.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
