@@ -11,7 +11,7 @@ int main()
 {
     printf("Press any key to start\n");
     getch();  //Waits for input
-    //introduction();//Starts the introduction sequence
+    introduction();//Starts the introduction sequence
 
     while(1)
     {
@@ -23,11 +23,11 @@ int main()
         {
             scr("...",0);
             delay(1000);
-            printf("You died\n");//You die and the game exits when any parameter is > 0
+            printf("\nYou died\n\n");
             delay(1000);
-            printf("Final parameters:\n");
+            printf("Dogtag:\n");
             delay(1000);
-            params();//Shows your final parameters
+            me();
             delay(1000);
             exit(0);
         }

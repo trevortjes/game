@@ -241,13 +241,18 @@ void enemy()
         {
             scr("You have no ammo, you had to flee",0);
             scr("You got wounded while doing so",0);
-            sanity-=20; health-=10; xp-=20;
-        }else
+            sanity-=20;
+            health-=10;
+            xp-=20;
+        }
+        else
         {
             scr("You killed the soldier",0);
             delay(100);
             scr("You immediately wonder how his family will react",0);
-            xp+=100; sanity-=10; ammo--;
+            xp+=100;
+            sanity-=10;
+            ammo--;
         }
     }
 
