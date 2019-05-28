@@ -65,7 +65,7 @@ void introduction()
         char com[]= {};
         scanf("%s",&com);//Asks for a command
     }
-        scr("you found: Bread", 0);
+    scr("you found: Bread", 0);
 
     delay(500);
 
@@ -93,7 +93,7 @@ void introduction()
 
     scr("- That will make you feel...", 0);
     scr("...",0);
-   scr("A clean snipershot right through the skull killed the friendly soldier", 0);
+    scr("A clean snipershot right through the skull killed the friendly soldier", 0);
     scr("It is all up to you now\n", 0);
     delay(1000);
 
@@ -139,6 +139,10 @@ void parser()
     else if (strcmp(com, "me") == 0)//Check general stuff
     {
         me();
+    }
+    else if (strcmp(com, "walk") == 0)//Check general stuff
+    {
+        walk();
     }
     else
     {
